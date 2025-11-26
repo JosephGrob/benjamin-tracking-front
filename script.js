@@ -21,7 +21,7 @@ const cartoLight = L.tileLayer(
   }
 );
 
-
+const API_BASE = "https://benjamin-tracking.onrender.com";
 
 // --- 2) Groupe pour les traces ---
 const tracesGroup = L.layerGroup().addTo(map);
