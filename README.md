@@ -9,7 +9,7 @@ Ce dépôt contient le **frontend** du projet de suivi de navigation de Benjamin
 > https://josephgrob.github.io/benjamin-tracking-front/
 
 > Page GPS (Benjamin uniquement) :  
-> https://josephgrob.github.io/benjamin-tracking-front/gps.html
+> https://josephgrob.github.io/benjamin-tracking-front/GPS.html
 
 
 ---
@@ -22,7 +22,7 @@ Ce dépôt contient le **frontend** du projet de suivi de navigation de Benjamin
 
 - Pour **envoyer sa position (Benjamin)** :  
   ouvrir la page GPS sur téléphone :  
-  `https://josephgrob.github.io/benjamin-tracking-front/gps.html`  
+  `https://josephgrob.github.io/benjamin-tracking-front/GPS.html`  
   accepter la géolocalisation  
   appuyer sur **Start**  
   laisser la page ouverte pendant la navigation
