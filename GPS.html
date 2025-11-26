@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <title>GPS Benjamin – Envoi de position</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <style>
+    body {
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+        sans-serif;
+      margin: 0;
+      padding: 20px;
+      background: #111827;
+      color: #e5e7eb;
+    }
+
+    h1 {
+      font-size: 1.6rem;
+      margin-bottom: 0.5rem;
+    }
+
+    p {
+      margin-top: 0;
+      color: #9ca3af;
+    }
+
+    .card {
+      background: #1f2937;
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin-top: 16px;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.35);
+    }
+
+    button {
+      border: none;
+      border-radius: 999px;
+      padding: 10px 20px;
+      font-size: 1rem;
+      cursor: pointer;
+      margin-right: 10px;
+    }
+
+    #startBtn {
+      background: #22c55e;
+      color: #022c22;
+      font-weight: 600;
+    }
+
+    #stopBtn {
+      background: #4b5563;
+      color: #e5e7eb;
+    }
+
+    #status {
+      margin-top: 10px;
+      font-size: 0.9rem;
+      color: #9ca3af;
+      white-space: pre-line;
+    }
+
+    .value {
+      font-family: "SF Mono", Menlo, Monaco, Consolas, "Liberation Mono",
+        "Courier New", monospace;
+    }
+  </style>
+</head>
+<body>
+  <h1>GPS – Benjamin Senften</h1>
+  <p>
+    Appuie sur <strong>Start</strong> avant le départ. L’app enverra
+    régulièrement ta position au serveur proposé par Joseph.
+  </p>
+
+  <div class="card">
+    <button id="startBtn">Start</button>
+    <button id="stopBtn" disabled>Stop</button>
+
+    <div id="status">
+      En attente de démarrage…
+    </div>
+  </div>
+
+  <script>
+    const API_BASE = "https://benjamin-tracking.onrender.com";
+    const TRACK_ID = "live"; // on peut changer plus tard (ex: transat_2025)
+    const API_TOKEN = "3Gm9u_PdR8kQ2Zs1wXh5L0FbN7cYa4V"; // le même que dans Render
+
+    const startBtn = document.getElementById("startBtn");
+    const stopBtn = document.getElementById("stopBtn");
+    const statusEl = document.getElementById("status");
+
+    let watchId = null;
+    let sentCount = 0;
+
+    function logStatus(msg) {
+      const now = new Date().toLocaleTimeString("fr-CH", { hour12: false });
+      statusEl.textContent = `[${now}] ${msg}\n` + statusEl.textContent;
+    }
+
+    async function sendPosition(position) {
+      const lat = position.coords.latitude;
+      const lng = position.coords.longitude;
+      const accuracy = position.coords.accuracy;
+
+      try {
+        const res = await fetch(`${API_BASE}/api/position`, {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json",
+            "X-API-Key": API_TOKEN
+        },
+        body: JSON.stringify({
+            lat,
+            lng,
+            track_id: TRACK_ID
+        })
+        });
+
+        if (!res.ok) {
+          logStatus(`❌ Erreur serveur (${res.status})`);
+          return;
+        }
+
+        const data = await res.json();
+        sentCount = data.count;
+        logStatus(
+          `✅ Position envoyée : lat=${lat.toFixed(
+            5
+          )}, lng=${lng.toFixed(5)}, précision ~${Math.round(
+            accuracy
+          )} m (total: ${sentCount})`
+        );
+      } catch (err) {
+        console.error(err);
+        logStatus("❌ Erreur réseau : impossible d’envoyer la position.");
+      }
+    }
+
+    function startTracking() {
+      if (!("geolocation" in navigator)) {
+        logStatus("❌ Ce téléphone ne supporte pas la géolocalisation.");
+        return;
+      }
+
+      if (watchId !== null) {
+        logStatus("⏳ Tracking déjà en cours.");
+        return;
+      }
+
+      // Important: nécessite HTTPS ou localhost
+      watchId = navigator.geolocation.watchPosition(
+        sendPosition,
+        (err) => {
+          console.error(err);
+          logStatus("❌ Erreur GPS : " + err.message);
+        },
+        {
+          enableHighAccuracy: true,
+          maximumAge: 10_000, // accepte position jusqu'à 10 s
+          timeout: 20_000
+        }
+      );
+
+      startBtn.disabled = true;
+      stopBtn.disabled = false;
+      logStatus("▶️ Tracking démarré.");
+    }
+
+    function stopTracking() {
+      if (watchId !== null) {
+        navigator.geolocation.clearWatch(watchId);
+        watchId = null;
+        logStatus("⏹ Tracking arrêté.");
+      }
+      startBtn.disabled = false;
+      stopBtn.disabled = true;
+    }
+
+    startBtn.addEventListener("click", startTracking);
+    stopBtn.addEventListener("click", stopTracking);
+  </script>
+</body>
+</html>

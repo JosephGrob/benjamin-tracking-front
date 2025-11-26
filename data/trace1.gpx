@@ -1,0 +1,496 @@
+<?xml version="1.0"?>
+<gpx version="1.1" creator="OpenCPN" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.topografix.com/GPX/1/1" xmlns:gpxx="http://www.garmin.com/xmlschemas/GpxExtensions/v3" xsi:schemaLocation="http://www.topografix.com/GPX/1/1 http://www.topografix.com/GPX/1/1/gpx.xsd http://www.garmin.com/xmlschemas/GpxExtensions/v3 http://www8.garmin.com/xmlschemas/GpxExtensionsv3.xsd" xmlns:opencpn="http://www.opencpn.org">
+  <rte>
+    <name>Croisière vincent</name>
+    <extensions>
+      <opencpn:guid>26fc034a-d677-41f5-aabd-a08543f4ccf9</opencpn:guid>
+      <opencpn:viz>1</opencpn:viz>
+      <opencpn:sharedWPviz>0</opencpn:sharedWPviz>
+      <opencpn:planned_speed>6.00</opencpn:planned_speed>
+      <opencpn:planned_departure>2025-08-29T20:50:42Z</opencpn:planned_departure>
+      <opencpn:time_display>PC</opencpn:time_display>
+      <gpxx:RouteExtension>
+        <gpxx:IsAutoNamed>false</gpxx:IsAutoNamed>
+      </gpxx:RouteExtension>
+    </extensions>
+    <rtept lat="43.565333333" lon="7.075500000">
+      <time>2024-04-27T20:00:00Z</time>
+      <name>27/04/2024 20h00 Départ Golf Juan</name>
+      <desc>moteur</desc>
+      <sym>1st-Diamond</sym>
+      <type>WPT</type>
+      <extensions>
+        <opencpn:guid>16b45405-31f0-43ed-8f82-c95f55848f8a</opencpn:guid>
+        <opencpn:viz_name>1</opencpn:viz_name>
+        <opencpn:arrival_radius>0.050</opencpn:arrival_radius>
+        <opencpn:waypoint_range_rings visible="false" number="0" step="1" units="0" colour="#FFFFFF" />
+        <opencpn:scale_min_max UseScale="false" ScaleMin="2147483646" ScaleMax="0" />
+      </extensions>
+    </rtept>
+    <rtept lat="43.517638333" lon="7.141250000">
+      <time>2024-04-27T20:40:00Z</time>
+      <name>20h40</name>
+      <sym>1st-Diamond</sym>
+      <type>WPT</type>
+      <extensions>
+        <opencpn:guid>55f76530-ca28-4a30-9b01-224a236b80f3</opencpn:guid>
+        <opencpn:viz_name>1</opencpn:viz_name>
+        <opencpn:arrival_radius>0.050</opencpn:arrival_radius>
+        <opencpn:waypoint_range_rings visible="false" number="0" step="1" units="0" colour="#FFFFFF" />
+        <opencpn:scale_min_max UseScale="false" ScaleMin="2147483646" ScaleMax="0" />
+      </extensions>
+    </rtept>
+    <rtept lat="43.415866667" lon="7.271818333">
+      <time>2024-04-27T22:00:00Z</time>
+      <name>22h00</name>
+      <sym>1st-Diamond</sym>
+      <type>WPT</type>
+      <extensions>
+        <opencpn:guid>7257b18b-b692-49b4-b2a6-525414053bc3</opencpn:guid>
+        <opencpn:viz_name>1</opencpn:viz_name>
+        <opencpn:arrival_radius>0.050</opencpn:arrival_radius>
+        <opencpn:waypoint_range_rings visible="false" number="0" step="1" units="0" colour="#FFFFFF" />
+        <opencpn:scale_min_max UseScale="false" ScaleMin="2147483646" ScaleMax="0" />
+      </extensions>
+    </rtept>
+    <rtept lat="43.276443333" lon="7.432175000">
+      <time>2024-04-27T23:40:00Z</time>
+      <name>23h40</name>
+      <sym>1st-Diamond</sym>
+      <type>WPT</type>
+      <extensions>
+        <opencpn:guid>2de07c9c-da29-4a02-9a28-4ebf0731c212</opencpn:guid>
+        <opencpn:viz_name>1</opencpn:viz_name>
+        <opencpn:arrival_radius>0.050</opencpn:arrival_radius>
+        <opencpn:waypoint_range_rings visible="false" number="0" step="1" units="0" colour="#FFFFFF" />
+        <opencpn:scale_min_max UseScale="false" ScaleMin="2147483646" ScaleMax="0" />
+      </extensions>
+    </rtept>
+    <rtept lat="43.086693333" lon="7.672665000">
+      <time>2024-04-28T02:00:00Z</time>
+      <name>28/04/2025 02h00</name>
+      <sym>1st-Diamond</sym>
+      <type>WPT</type>
+      <extensions>
+        <opencpn:guid>0198cbe6-ace4-4307-8c66-52714cbeaa2d</opencpn:guid>
+        <opencpn:viz_name>1</opencpn:viz_name>
+        <opencpn:arrival_radius>0.050</opencpn:arrival_radius>
+        <opencpn:waypoint_range_rings visible="false" number="0" step="1" units="0" colour="#FFFFFF" />
+        <opencpn:scale_min_max UseScale="false" ScaleMin="2147483646" ScaleMax="0" />
+      </extensions>
+    </rtept>
+    <rtept lat="42.916220000" lon="7.868266667">
+      <time>2024-04-28T03:55:00Z</time>
+      <name>03h55</name>
+      <sym>1st-Diamond</sym>
+      <type>WPT</type>
+      <extensions>
+        <opencpn:guid>5a8682df-69f4-4ae0-9c34-b9ee699b44a8</opencpn:guid>
+        <opencpn:viz_name>1</opencpn:viz_name>
+        <opencpn:arrival_radius>0.050</opencpn:arrival_radius>
+        <opencpn:waypoint_range_rings visible="false" number="0" step="1" units="0" colour="#FFFFFF" />
+        <opencpn:scale_min_max UseScale="false" ScaleMin="2147483646" ScaleMax="0" />
+      </extensions>
+    </rtept>
+    <rtept lat="42.798190000" lon="8.257575000">
+      <time>2024-04-28T07:35:00Z</time>
+      <name>07h35</name>
+      <sym>1st-Diamond</sym>
+      <type>WPT</type>
+      <extensions>
+        <opencpn:guid>224b2641-e778-4c84-83f7-967052518348</opencpn:guid>
+        <opencpn:viz_name>1</opencpn:viz_name>
+        <opencpn:arrival_radius>0.050</opencpn:arrival_radius>
+        <opencpn:waypoint_range_rings visible="false" number="0" step="1" units="0" colour="#FFFFFF" />
+        <opencpn:scale_min_max UseScale="false" ScaleMin="2147483646" ScaleMax="0" />
+      </extensions>
+    </rtept>
+    <rtept lat="42.644296667" lon="8.505358333">
+      <time>2024-04-28T10:35:00Z</time>
+      <name>10h35</name>
+      <sym>1st-Diamond</sym>
+      <type>WPT</type>
+      <extensions>
+        <opencpn:guid>22d62cd8-3634-45dc-adeb-a5704e33b023</opencpn:guid>
+        <opencpn:viz_name>1</opencpn:viz_name>
+        <opencpn:arrival_radius>0.050</opencpn:arrival_radius>
+        <opencpn:waypoint_range_rings visible="false" number="0" step="1" units="0" colour="#FFFFFF" />
+        <opencpn:scale_min_max UseScale="false" ScaleMin="2147483646" ScaleMax="0" />
+      </extensions>
+    </rtept>
+    <rtept lat="42.590290000" lon="8.679383333">
+      <time>2024-04-28T11:55:00Z</time>
+      <name>11h55</name>
+      <sym>1st-Diamond</sym>
+      <type>WPT</type>
+      <extensions>
+        <opencpn:guid>7259b81a-c08c-4f92-8ee9-b4831a8a9306</opencpn:guid>
+        <opencpn:viz_name>1</opencpn:viz_name>
+        <opencpn:arrival_radius>0.050</opencpn:arrival_radius>
+        <opencpn:waypoint_range_rings visible="false" number="0" step="1" units="0" colour="#FFFFFF" />
+        <opencpn:scale_min_max UseScale="false" ScaleMin="2147483646" ScaleMax="0" />
+      </extensions>
+    </rtept>
+    <rtept lat="42.576293333" lon="8.764065000">
+      <time>2024-04-28T12:35:00Z</time>
+      <name>12h35</name>
+      <desc>moteur</desc>
+      <sym>1st-Diamond</sym>
+      <type>WPT</type>
+      <extensions>
+        <opencpn:guid>4f0baeb8-0ff8-4142-b836-7ab5198ed468</opencpn:guid>
+        <opencpn:viz_name>1</opencpn:viz_name>
+        <opencpn:shared>1</opencpn:shared>
+        <opencpn:arrival_radius>0.050</opencpn:arrival_radius>
+        <opencpn:waypoint_range_rings visible="false" number="0" step="1" units="0" colour="#FFFFFF" />
+        <opencpn:scale_min_max UseScale="false" ScaleMin="2147483646" ScaleMax="0" />
+      </extensions>
+    </rtept>
+    <rtept lat="42.564616667" lon="8.758900000">
+      <time>2024-04-28T13:00:00Z</time>
+      <name>Arrivée Calvi 13h</name>
+      <desc>moteur</desc>
+      <sym>1st-Diamond</sym>
+      <type>WPT</type>
+      <extensions>
+        <opencpn:guid>6390196b-12ea-4b95-9b6b-a8207c8eaedc</opencpn:guid>
+        <opencpn:viz_name>1</opencpn:viz_name>
+        <opencpn:shared>1</opencpn:shared>
+        <opencpn:arrival_radius>0.050</opencpn:arrival_radius>
+        <opencpn:waypoint_range_rings visible="false" number="0" step="1" units="0" colour="#FFFFFF" />
+        <opencpn:scale_min_max UseScale="false" ScaleMin="2147483646" ScaleMax="0" />
+      </extensions>
+    </rtept>
+    <rtept lat="42.565560000" lon="8.758936667">
+      <time>2025-08-29T19:25:14Z</time>
+      <name>29/04/2025 Départ 7h50 </name>
+      <desc>Moteur</desc>
+      <sym>diamond</sym>
+      <type>WPT</type>
+      <extensions>
+        <opencpn:guid>5f6b411d-f500-48b3-8c61-832f44d6fdcc</opencpn:guid>
+        <opencpn:viz_name>1</opencpn:viz_name>
+        <opencpn:arrival_radius>0.050</opencpn:arrival_radius>
+        <opencpn:waypoint_range_rings visible="false" number="0" step="1" units="0" colour="#FF0000" />
+        <opencpn:scale_min_max UseScale="false" ScaleMin="2147483646" ScaleMax="0" />
+      </extensions>
+    </rtept>
+    <rtept lat="42.590508333" lon="8.707953333">
+      <time>2025-08-31T19:06:56Z</time>
+      <name>08h30</name>
+      <sym>diamond</sym>
+      <type>WPT</type>
+      <extensions>
+        <opencpn:guid>0f0dee3d-b727-4a1f-afd2-e025647bec26</opencpn:guid>
+        <opencpn:viz_name>1</opencpn:viz_name>
+        <opencpn:arrival_radius>0.050</opencpn:arrival_radius>
+        <opencpn:waypoint_range_rings visible="false" number="0" step="1" units="0" colour="#FF0000" />
+        <opencpn:scale_min_max UseScale="false" ScaleMin="2147483646" ScaleMax="0" />
+      </extensions>
+    </rtept>
+    <rtept lat="42.537691667" lon="8.651868333">
+      <time>2024-04-29T09:05:00Z</time>
+      <name>09h05</name>
+      <sym>1st-Diamond</sym>
+      <type>WPT</type>
+      <extensions>
+        <opencpn:guid>0daceeb4-a8d6-444b-a9d9-30623d965452</opencpn:guid>
+        <opencpn:viz_name>1</opencpn:viz_name>
+        <opencpn:arrival_radius>0.050</opencpn:arrival_radius>
+        <opencpn:waypoint_range_rings visible="false" number="0" step="1" units="0" colour="#FFFFFF" />
+        <opencpn:scale_min_max UseScale="false" ScaleMin="2147483646" ScaleMax="0" />
+      </extensions>
+    </rtept>
+    <rtept lat="42.459215000" lon="8.610026667">
+      <time>2024-04-29T10:05:00Z</time>
+      <name>10h05</name>
+      <desc>série d’empannage</desc>
+      <sym>1st-Diamond</sym>
+      <type>WPT</type>
+      <extensions>
+        <opencpn:guid>4e19c221-fa30-4dda-873e-d9f149566fb9</opencpn:guid>
+        <opencpn:viz_name>1</opencpn:viz_name>
+        <opencpn:arrival_radius>0.050</opencpn:arrival_radius>
+        <opencpn:waypoint_range_rings visible="false" number="0" step="1" units="0" colour="#FFFFFF" />
+        <opencpn:scale_min_max UseScale="false" ScaleMin="2147483646" ScaleMax="0" />
+      </extensions>
+    </rtept>
+    <rtept lat="42.375573333" lon="8.524611667">
+      <time>2024-04-29T11:30:00Z</time>
+      <name>11h30</name>
+      <sym>1st-Diamond</sym>
+      <type>WPT</type>
+      <extensions>
+        <opencpn:guid>0c6f6ea2-cf90-420d-8f6b-689c6dc96d3c</opencpn:guid>
+        <opencpn:viz_name>1</opencpn:viz_name>
+        <opencpn:arrival_radius>0.050</opencpn:arrival_radius>
+        <opencpn:waypoint_range_rings visible="false" number="0" step="1" units="0" colour="#FFFFFF" />
+        <opencpn:scale_min_max UseScale="false" ScaleMin="2147483646" ScaleMax="0" />
+      </extensions>
+    </rtept>
+    <rtept lat="42.347833333" lon="8.610500000">
+      <time>2025-08-29T19:38:30Z</time>
+      <name>12h30 Arrivée mouillage girolata</name>
+      <sym>diamond</sym>
+      <type>WPT</type>
+      <extensions>
+        <opencpn:guid>4eefa3bb-adcd-4877-a45e-a98c3456a8d8</opencpn:guid>
+        <opencpn:viz_name>1</opencpn:viz_name>
+        <opencpn:arrival_radius>0.050</opencpn:arrival_radius>
+        <opencpn:waypoint_range_rings visible="false" number="0" step="1" units="0" colour="#FF0000" />
+        <opencpn:scale_min_max UseScale="false" ScaleMin="2147483646" ScaleMax="0" />
+      </extensions>
+    </rtept>
+    <rtept lat="42.347333223" lon="8.609636167">
+      <time>2024-04-29T18:00:00Z</time>
+      <name>Départ 19h00</name>
+      <desc>moteur</desc>
+      <sym>1st-Diamond</sym>
+      <type>WPT</type>
+      <extensions>
+        <opencpn:guid>73883084-e452-4928-aaf6-c1b304212460</opencpn:guid>
+        <opencpn:viz_name>1</opencpn:viz_name>
+        <opencpn:arrival_radius>0.050</opencpn:arrival_radius>
+        <opencpn:waypoint_range_rings visible="false" number="0" step="1" units="0" colour="#FFFFFF" />
+        <opencpn:scale_min_max UseScale="false" ScaleMin="2147483646" ScaleMax="0" />
+      </extensions>
+    </rtept>
+    <rtept lat="42.439560000" lon="8.600106667">
+      <time>2024-04-29T20:55:00Z</time>
+      <name>20h40</name>
+      <desc>moteur</desc>
+      <sym>1st-Diamond</sym>
+      <type>WPT</type>
+      <extensions>
+        <opencpn:guid>55042924-0853-44b3-8b89-0dcd0bc51d6a</opencpn:guid>
+        <opencpn:viz_name>1</opencpn:viz_name>
+        <opencpn:arrival_radius>0.050</opencpn:arrival_radius>
+        <opencpn:waypoint_range_rings visible="false" number="0" step="1" units="0" colour="#FFFFFF" />
+        <opencpn:scale_min_max UseScale="false" ScaleMin="2147483646" ScaleMax="0" />
+      </extensions>
+    </rtept>
+    <rtept lat="42.590731667" lon="8.712448333">
+      <time>2025-08-29T19:46:27Z</time>
+      <name>22h30</name>
+      <sym>diamond</sym>
+      <type>WPT</type>
+      <extensions>
+        <opencpn:guid>245855a5-46bd-4e8b-b935-cc0c33c4afe7</opencpn:guid>
+        <opencpn:viz_name>1</opencpn:viz_name>
+        <opencpn:arrival_radius>0.050</opencpn:arrival_radius>
+        <opencpn:waypoint_range_rings visible="false" number="0" step="1" units="0" colour="#FF0000" />
+        <opencpn:scale_min_max UseScale="false" ScaleMin="2147483646" ScaleMax="0" />
+      </extensions>
+    </rtept>
+    <rtept lat="42.634516667" lon="8.835836667">
+      <time>2025-08-29T20:01:31Z</time>
+      <name>30/05/2024 01h20</name>
+      <desc>Passage au nord de la cardinale</desc>
+      <sym>diamond</sym>
+      <type>WPT</type>
+      <extensions>
+        <opencpn:guid>6ff84148-270d-4280-aacf-e2b97dc57853</opencpn:guid>
+        <opencpn:viz_name>1</opencpn:viz_name>
+        <opencpn:arrival_radius>0.050</opencpn:arrival_radius>
+        <opencpn:waypoint_range_rings visible="false" number="0" step="1" units="0" colour="#FF0000" />
+        <opencpn:scale_min_max UseScale="false" ScaleMin="2147483646" ScaleMax="0" />
+      </extensions>
+    </rtept>
+    <rtept lat="42.703688333" lon="9.032391667">
+      <time>2025-08-29T20:31:09Z</time>
+      <name>04h00</name>
+      <sym>1st-Diamond</sym>
+      <type>WPT</type>
+      <extensions>
+        <opencpn:guid>57a221d4-aab6-4dc1-919f-45f331a7f931</opencpn:guid>
+        <opencpn:viz_name>1</opencpn:viz_name>
+        <opencpn:shared>1</opencpn:shared>
+        <opencpn:arrival_radius>0.050</opencpn:arrival_radius>
+        <opencpn:waypoint_range_rings visible="false" number="0" step="1" units="0" colour="#FF0000" />
+        <opencpn:scale_min_max UseScale="false" ScaleMin="2147483646" ScaleMax="0" />
+      </extensions>
+    </rtept>
+    <rtept lat="42.893021000" lon="9.256378000">
+      <time>2025-08-29T20:32:28Z</time>
+      <name>06h15</name>
+      <sym>1st-Diamond</sym>
+      <type>WPT</type>
+      <extensions>
+        <opencpn:guid>6ffc617a-44c8-4c75-8462-b0193d961aa8</opencpn:guid>
+        <opencpn:viz_name>1</opencpn:viz_name>
+        <opencpn:shared>1</opencpn:shared>
+        <opencpn:arrival_radius>0.050</opencpn:arrival_radius>
+        <opencpn:waypoint_range_rings visible="false" number="0" step="1" units="0" colour="#FF0000" />
+        <opencpn:scale_min_max UseScale="false" ScaleMin="2147483646" ScaleMax="0" />
+      </extensions>
+    </rtept>
+    <rtept lat="42.977406667" lon="9.316106667">
+      <time>2025-08-29T20:33:12Z</time>
+      <name>07h10</name>
+      <desc>cap 315 direction Villefranche</desc>
+      <sym>1st-Diamond</sym>
+      <type>WPT</type>
+      <extensions>
+        <opencpn:guid>0b53e6a8-6298-4c56-87e8-0d5c16623900</opencpn:guid>
+        <opencpn:viz_name>1</opencpn:viz_name>
+        <opencpn:shared>1</opencpn:shared>
+        <opencpn:arrival_radius>0.050</opencpn:arrival_radius>
+        <opencpn:waypoint_range_rings visible="false" number="0" step="1" units="0" colour="#FF0000" />
+        <opencpn:scale_min_max UseScale="false" ScaleMin="2147483646" ScaleMax="0" />
+      </extensions>
+    </rtept>
+    <rtept lat="43.108467000" lon="9.121260000">
+      <time>2025-08-29T20:35:55Z</time>
+      <name>09h15</name>
+      <sym>1st-Diamond</sym>
+      <type>WPT</type>
+      <extensions>
+        <opencpn:guid>2c4e7e2f-aa7c-4f32-80c8-ad52179425bb</opencpn:guid>
+        <opencpn:viz_name>1</opencpn:viz_name>
+        <opencpn:shared>1</opencpn:shared>
+        <opencpn:arrival_radius>0.050</opencpn:arrival_radius>
+        <opencpn:waypoint_range_rings visible="false" number="0" step="1" units="0" colour="#FF0000" />
+        <opencpn:scale_min_max UseScale="false" ScaleMin="2147483646" ScaleMax="0" />
+      </extensions>
+    </rtept>
+    <rtept lat="43.287931000" lon="8.500980000">
+      <time>2025-08-29T20:37:02Z</time>
+      <name>13h10</name>
+      <sym>1st-Diamond</sym>
+      <type>WPT</type>
+      <extensions>
+        <opencpn:guid>52ad7410-f33d-4558-ab83-c2b472d9861c</opencpn:guid>
+        <opencpn:viz_name>1</opencpn:viz_name>
+        <opencpn:shared>1</opencpn:shared>
+        <opencpn:arrival_radius>0.050</opencpn:arrival_radius>
+        <opencpn:waypoint_range_rings visible="false" number="0" step="1" units="0" colour="#FF0000" />
+        <opencpn:scale_min_max UseScale="false" ScaleMin="2147483646" ScaleMax="0" />
+      </extensions>
+    </rtept>
+    <rtept lat="43.393666000" lon="8.124658000">
+      <time>2025-08-29T20:38:09Z</time>
+      <name>15h30</name>
+      <sym>1st-Diamond</sym>
+      <type>WPT</type>
+      <extensions>
+        <opencpn:guid>38c45227-c1da-4eff-9513-bc4144ad60aa</opencpn:guid>
+        <opencpn:viz_name>1</opencpn:viz_name>
+        <opencpn:shared>1</opencpn:shared>
+        <opencpn:arrival_radius>0.050</opencpn:arrival_radius>
+        <opencpn:waypoint_range_rings visible="false" number="0" step="1" units="0" colour="#FF0000" />
+        <opencpn:scale_min_max UseScale="false" ScaleMin="2147483646" ScaleMax="0" />
+      </extensions>
+    </rtept>
+    <rtept lat="43.523064000" lon="7.684712000">
+      <time>2025-08-29T20:40:00Z</time>
+      <name>18h00</name>
+      <sym>1st-Diamond</sym>
+      <type>WPT</type>
+      <extensions>
+        <opencpn:guid>11b6db5c-f7f6-4827-b7e4-576c45b0aab4</opencpn:guid>
+        <opencpn:viz_name>1</opencpn:viz_name>
+        <opencpn:shared>1</opencpn:shared>
+        <opencpn:arrival_radius>0.050</opencpn:arrival_radius>
+        <opencpn:waypoint_range_rings visible="false" number="0" step="1" units="0" colour="#FF0000" />
+        <opencpn:scale_min_max UseScale="false" ScaleMin="2147483646" ScaleMax="0" />
+      </extensions>
+    </rtept>
+    <rtept lat="43.672086667" lon="7.321573333">
+      <time>2025-08-29T20:40:59Z</time>
+      <name>20h45</name>
+      <desc>moteur</desc>
+      <sym>1st-Diamond</sym>
+      <type>WPT</type>
+      <extensions>
+        <opencpn:guid>428ff537-f258-494b-84b4-5127052c51e9</opencpn:guid>
+        <opencpn:viz_name>1</opencpn:viz_name>
+        <opencpn:shared>1</opencpn:shared>
+        <opencpn:arrival_radius>0.050</opencpn:arrival_radius>
+        <opencpn:waypoint_range_rings visible="false" number="0" step="1" units="0" colour="#FF0000" />
+        <opencpn:scale_min_max UseScale="false" ScaleMin="2147483646" ScaleMax="0" />
+      </extensions>
+    </rtept>
+    <rtept lat="43.700233333" lon="7.318183333">
+      <time>2025-08-29T20:41:44Z</time>
+      <name>21h00 arrivée mouillage</name>
+      <desc>moteur</desc>
+      <sym>1st-Diamond</sym>
+      <type>WPT</type>
+      <extensions>
+        <opencpn:guid>55955d3d-8239-4ba5-9c56-73ee1848e61e</opencpn:guid>
+        <opencpn:viz_name>1</opencpn:viz_name>
+        <opencpn:shared>1</opencpn:shared>
+        <opencpn:arrival_radius>0.050</opencpn:arrival_radius>
+        <opencpn:waypoint_range_rings visible="false" number="0" step="1" units="0" colour="#FF0000" />
+        <opencpn:scale_min_max UseScale="false" ScaleMin="2147483646" ScaleMax="0" />
+      </extensions>
+    </rtept>
+    <rtept lat="43.700023333" lon="7.317183333">
+      <time>2024-05-03T09:15:00Z</time>
+      <name>03/05/2024 départ 09h15</name>
+      <sym>1st-Diamond</sym>
+      <type>WPT</type>
+      <extensions>
+        <opencpn:guid>037cd9d5-f381-44cd-a167-997d72cb0fdd</opencpn:guid>
+        <opencpn:viz_name>1</opencpn:viz_name>
+        <opencpn:arrival_radius>0.050</opencpn:arrival_radius>
+        <opencpn:waypoint_range_rings visible="false" number="0" step="1" units="0" colour="#FFFFFF" />
+        <opencpn:scale_min_max UseScale="false" ScaleMin="2147483646" ScaleMax="0" />
+      </extensions>
+    </rtept>
+    <rtept lat="43.670353333" lon="7.277066667">
+      <time>2024-05-03T10:15:00Z</time>
+      <name>10h15</name>
+      <sym>1st-Diamond</sym>
+      <type>WPT</type>
+      <extensions>
+        <opencpn:guid>7ab504cc-049d-4603-9b5a-adef272e7d6d</opencpn:guid>
+        <opencpn:viz_name>1</opencpn:viz_name>
+        <opencpn:arrival_radius>0.050</opencpn:arrival_radius>
+        <opencpn:waypoint_range_rings visible="false" number="0" step="1" units="0" colour="#FFFFFF" />
+        <opencpn:scale_min_max UseScale="false" ScaleMin="2147483646" ScaleMax="0" />
+      </extensions>
+    </rtept>
+    <rtept lat="43.586091667" lon="7.173060000">
+      <time>2024-05-03T11:55:00Z</time>
+      <name>11h55</name>
+      <sym>1st-Diamond</sym>
+      <type>WPT</type>
+      <extensions>
+        <opencpn:guid>6c1ffa4e-4ed5-4a26-879c-c5ca4da99cc7</opencpn:guid>
+        <opencpn:viz_name>1</opencpn:viz_name>
+        <opencpn:arrival_radius>0.050</opencpn:arrival_radius>
+        <opencpn:waypoint_range_rings visible="false" number="0" step="1" units="0" colour="#FFFFFF" />
+        <opencpn:scale_min_max UseScale="false" ScaleMin="2147483646" ScaleMax="0" />
+      </extensions>
+    </rtept>
+    <rtept lat="43.546976667" lon="7.099071667">
+      <time>2024-05-03T12:50:00Z</time>
+      <name>12h55</name>
+      <desc>moteur</desc>
+      <sym>1st-Diamond</sym>
+      <type>WPT</type>
+      <extensions>
+        <opencpn:guid>238d2724-1009-4f09-9daf-2afb5c3c0410</opencpn:guid>
+        <opencpn:viz_name>1</opencpn:viz_name>
+        <opencpn:arrival_radius>0.050</opencpn:arrival_radius>
+        <opencpn:waypoint_range_rings visible="false" number="0" step="1" units="0" colour="#FFFFFF" />
+        <opencpn:scale_min_max UseScale="false" ScaleMin="2147483646" ScaleMax="0" />
+      </extensions>
+    </rtept>
+    <rtept lat="43.565333333" lon="7.075500000">
+      <time>2024-05-03T13:15:00Z</time>
+      <name>Arrivée Golf Ruan</name>
+      <desc>moteur</desc>
+      <sym>1st-Diamond</sym>
+      <type>WPT</type>
+      <extensions>
+        <opencpn:guid>682f2764-df86-4ee6-ac73-65e31b90adcf</opencpn:guid>
+        <opencpn:viz_name>1</opencpn:viz_name>
+        <opencpn:arrival_radius>0.050</opencpn:arrival_radius>
+        <opencpn:waypoint_range_rings visible="false" number="0" step="1" units="0" colour="#FFFFFF" />
+        <opencpn:scale_min_max UseScale="false" ScaleMin="2147483646" ScaleMax="0" />
+      </extensions>
+    </rtept>
+  </rte>
+</gpx>
