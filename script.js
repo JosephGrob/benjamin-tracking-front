@@ -1,5 +1,10 @@
+// ===========================
+// 1. Carte & fonds
+// ===========================
+
 // Initialiser la carte centrée sur l'Atlantique
-const map = L.map("map").setView([20, -30], 3);
+const map = L.map("map").setView([20, -30], 2);
+
 
 // --- 1) Fond GEBCO gris ---
 const gebcoGray = L.tileLayer(
@@ -23,12 +28,157 @@ const cartoLight = L.tileLayer(
 
 const API_BASE = "https://benjamin-tracking.onrender.com";
 
-// --- 2) Groupe pour les traces ---
+
+// ===========================
+// 2. Formulaire "Ajouter un média"
+// ===========================
+
+const mediaPanel = document.getElementById("media-panel");
+const mediaForm = document.getElementById("media-form");
+const mediaCancel = document.getElementById("media-cancel");
+const mediaStatus = document.getElementById("media-status");
+const mediaPosition = document.getElementById("media-position");
+
+let currentMediaContext = {
+  trackId: null,
+  lat: null,
+  lng: null
+};
+
+function openMediaForm(trackId, latlng) {
+  currentMediaContext.trackId = trackId;
+  currentMediaContext.lat = latlng.lat;
+  currentMediaContext.lng = latlng.lng;
+
+  mediaPosition.textContent = `Trace : ${trackId} — position : ${latlng.lat.toFixed(
+    4
+  )}, ${latlng.lng.toFixed(4)}`;
+  mediaStatus.textContent = "";
+  mediaForm.reset();
+  mediaPanel.classList.add("visible");
+}
+
+function closeMediaForm() {
+  mediaPanel.classList.remove("visible");
+}
+
+mediaCancel.addEventListener("click", () => {
+  closeMediaForm();
+});
+
+mediaForm.addEventListener("submit", async (e) => {
+  e.preventDefault();
+
+  const fileInput = document.getElementById("media-file");
+  const titleInput = document.getElementById("media-title");
+  const descInput = document.getElementById("media-description");
+
+  if (!fileInput.files || fileInput.files.length === 0) {
+    mediaStatus.textContent = "Merci de choisir un fichier.";
+    return;
+  }
+
+  const file = fileInput.files[0];
+  const formData = new FormData();
+  formData.append("file", file);
+  formData.append("title", titleInput.value || "");
+  formData.append("description", descInput.value || "");
+  formData.append("trackId", currentMediaContext.trackId || "");
+  formData.append("lat", currentMediaContext.lat);
+  formData.append("lng", currentMediaContext.lng);
+
+  mediaStatus.textContent = "Envoi en cours…";
+
+  try {
+    const response = await fetch(`${API_BASE}/api/media`, {
+      method: "POST",
+      body: formData
+    });
+
+    if (!response.ok) {
+      mediaStatus.textContent = "Erreur lors de l'envoi du média.";
+      return;
+    }
+
+    const media = await response.json();
+    mediaStatus.textContent = "Média enregistré ✔";
+
+    // Ajouter un marqueur sur la carte pour ce média
+    addMediaMarker(media);
+
+    setTimeout(() => {
+      closeMediaForm();
+    }, 800);
+  } catch (err) {
+    console.error("Erreur upload media:", err);
+    mediaStatus.textContent = "Erreur réseau.";
+  }
+});
+
+
+// ===========================
+// 3. Couches de médias
+// ===========================
+
+const mediaLayer = L.layerGroup().addTo(map);
+
+/**
+ * Ajoute un marqueur pour un média renvoyé par l'API
+ * media attendu : { id, lat, lng, title, description, url, type, trackId }
+ */
+function addMediaMarker(media) {
+  const pos = [media.lat, media.lng];
+  const marker = L.circleMarker(pos, {
+    radius: 6,
+    color: "#ffffff",
+    fillColor: "#ff6600",
+    fillOpacity: 1
+  });
+
+  let content = `<strong>${media.title || "Média"}</strong><br>`;
+  if (media.description) {
+    content += `<em>${media.description}</em><br>`;
+  }
+
+  if (media.type && media.type.startsWith("video/")) {
+    content += `<video src="${media.url}" controls style="max-width: 220px; max-height: 160px; margin-top: 6px;"></video>`;
+  } else if (media.url) {
+    content += `<img src="${media.url}" alt="" style="max-width: 220px; max-height: 160px; margin-top: 6px;" />`;
+  }
+
+  marker.bindPopup(content);
+  marker.addTo(mediaLayer);
+}
+
+/**
+ * Charge tous les médias existants depuis l'API
+ */
+async function loadExistingMedia() {
+  try {
+    const response = await fetch(`${API_BASE}/api/media`);
+    if (!response.ok) return;
+    const items = await response.json();
+    if (!Array.isArray(items)) return;
+    items.forEach(addMediaMarker);
+  } catch (err) {
+    console.error("Erreur lors du chargement des médias:", err);
+  }
+}
+
+loadExistingMedia();
+
+
+// ===========================
+// 4. Traces GPX (Trace 1, Trace 2)
+// ===========================
+
+// Groupe pour les traces
 const tracesGroup = L.layerGroup().addTo(map);
 
-
-// Petite fonction utilitaire pour ajouter une trace GPX
-function addGpx(path, color, name) {
+/**
+ * Ajoute une trace GPX, avec popup d'info + clic pour ouvrir le formulaire média
+ */
+function addGpx(path, name) {
   const gpxLayer = new L.GPX(path, {
     async: true,
     marker_options: {
@@ -37,9 +187,9 @@ function addGpx(path, color, name) {
       shadowUrl: null
     },
     polyline_options: {
-      color: color,
+      color: "#0033ff",
       weight: 3,
-      opacity: 0.9
+      opacity: 0.75
     }
   })
     .on("loaded", function (e) {
@@ -51,9 +201,14 @@ function addGpx(path, color, name) {
       // Adapter le zoom à la 1ère trace chargée
       if (tracesGroup.getLayers().length === 1) {
         map.fitBounds(gpx.getBounds());
+
+        // Dézoomer légèrement pour avoir plus de contexte
+        const currentZoom = map.getZoom();
+        map.setZoom(currentZoom - 3); // essaie -1, ou -2 si tu veux encore plus large
       }
 
-      // ---- Infos pour la popup ----
+
+      // ---- Infos pour la popup "stats" ----
       const distanceKm = (gpx.get_distance() / 1000).toFixed(1); // m -> km
 
       const start = gpx.get_start_time();
@@ -68,36 +223,47 @@ function addGpx(path, color, name) {
         <strong>${name}</strong><br>
         Distance : ${distanceKm} km<br>
         Du : ${startStr}<br>
-        Au : ${endStr}
+        Au : ${endStr}<br>
+        <small>Clique sur la trace pour ajouter un média à un endroit précis.</small>
       `;
 
-      // On lie la popup au groupe de la trace :
-      // un clic sur n'importe quelle portion de la trace ouvrira la popup
       gpx.bindPopup(html);
+
+      // Quand on clique sur la trace → ouvrir le formulaire média à l'endroit cliqué
+      gpx.on("click", function (evt) {
+        openMediaForm(name, evt.latlng);
+      });
     })
     .addTo(map);
 
   gpxLayer.name = name;
 }
 
-// --- 3) Ajouter tes deux fichiers GPX ---
-// adapte les noms si besoin (trace1.gpx / trace2.gpx)
-addGpx("data/trace1.gpx", "#ff6600", "Trace 1");
-addGpx("data/trace2.gpx", "#00bcd4", "Trace 2");
+// Ajouter les deux fichiers GPX
+addGpx("data/trace1.gpx", "Trace 1");
+addGpx("data/trace2.gpx", "Trace 2");
 
-// --- 4) Contrôle des couches ---
+
+// ===========================
+// 5. Contrôle des couches
+// ===========================
+
 const baseLayers = {
   "GEBCO gris (NOAA)": gebcoGray,
   "Fond clair (Carto)": cartoLight
 };
 
 const overlays = {
-  "Traces bateau": tracesGroup
+  "Traces bateau": tracesGroup,
+  "Médias": mediaLayer
 };
 
 L.control.layers(baseLayers, overlays, { collapsed: false }).addTo(map);
 
-// --- 5) Trace LIVE de Benjamin ---
+
+// ===========================
+// 6. Trace LIVE de Benjamin
+// ===========================
 
 let liveCoords = [];
 let liveLine = null;
@@ -126,9 +292,9 @@ async function updateLiveTrack() {
     // Polyline du trajet en direct
     if (!liveLine) {
       liveLine = L.polyline(liveCoords, {
-        color: "#ffdd00",
+        color: "#0033ff",
         weight: 4,
-        opacity: 0.95
+        opacity: 0.75
       }).addTo(map);
       tracesGroup.addLayer(liveLine);
     } else {
@@ -142,15 +308,15 @@ async function updateLiveTrack() {
       liveMarker = L.circleMarker(lastPoint, {
         radius: 6,
         color: "#000",
-        fillColor: "#ffdd00",
-        fillOpacity: 1
+        fillColor: "#0033ff",
+        fillOpacity: 0.75
       })
         .bindPopup("Position actuelle de Benjamin")
         .addTo(map);
       tracesGroup.addLayer(liveMarker);
 
       // Centrer la carte la première fois
-      map.setView(lastPoint, 5);
+      map.setView(lastPoint, 3);
     } else {
       liveMarker.setLatLng(lastPoint);
     }
@@ -164,4 +330,3 @@ updateLiveTrack();
 
 // Mise à jour toutes les 10 secondes (10000 ms)
 setInterval(updateLiveTrack, 10000);
-

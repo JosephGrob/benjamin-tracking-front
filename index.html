@@ -19,6 +19,29 @@
   <div id="title">Navigation — Benjamin Senften 2025</div>
   <div id="map"></div>
 
+    <div id="media-panel">
+    <form id="media-form">
+      <h2>Ajouter un média</h2>
+      <p id="media-position"></p>
+
+      <label for="media-title">Titre</label>
+      <input type="text" id="media-title" name="title" placeholder="Ex : Grain au large des Açores" />
+
+      <label for="media-description">Description</label>
+      <textarea id="media-description" name="description" rows="3" placeholder="Quelques mots sur ce moment..."></textarea>
+
+      <label for="media-file">Fichier (image ou vidéo)</label>
+      <input type="file" id="media-file" name="file" accept="image/*,video/*" />
+
+      <div class="media-buttons">
+        <button type="submit">Enregistrer</button>
+        <button type="button" id="media-cancel">Annuler</button>
+      </div>
+
+      <p id="media-status"></p>
+    </form>
+  </div>
+
   <!-- Leaflet JS -->
   <script
     src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"

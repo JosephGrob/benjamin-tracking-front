@@ -30,3 +30,87 @@ body {
 .leaflet-interactive {
   cursor: pointer;
 }
+
+
+/* --- Panneau "Ajouter un média" --- */
+#media-panel {
+  position: absolute;
+  right: 20px;
+  top: 70px;
+  width: 320px;
+  max-width: 80vw;
+  background: rgba(0, 0, 0, 0.75);
+  color: #f5f5f5;
+  border-radius: 10px;
+  padding: 14px 16px;
+  z-index: 1100;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  display: none; /* caché par défaut */
+}
+
+#media-panel.visible {
+  display: block;
+}
+
+#media-form h2 {
+  margin-top: 0;
+  font-size: 18px;
+  font-weight: 400;
+}
+
+#media-form label {
+  display: block;
+  margin-top: 8px;
+  font-size: 13px;
+  opacity: 0.8;
+}
+
+#media-form input[type="text"],
+#media-form textarea,
+#media-form input[type="file"] {
+  width: 100%;
+  margin-top: 4px;
+  margin-bottom: 4px;
+  font-size: 13px;
+  padding: 4px 6px;
+  border-radius: 4px;
+  border: 1px solid #444;
+  background: #111;
+  color: #f5f5f5;
+}
+
+#media-form textarea {
+  resize: vertical;
+}
+
+.media-buttons {
+  display: flex;
+  gap: 8px;
+  margin-top: 10px;
+}
+
+.media-buttons button {
+  flex: 1;
+  padding: 6px 0;
+  border-radius: 5px;
+  border: none;
+  cursor: pointer;
+  font-size: 13px;
+}
+
+.media-buttons button[type="submit"] {
+  background: #ffdd00;
+  color: #000;
+}
+
+.media-buttons button#media-cancel {
+  background: #333;
+  color: #f5f5f5;
+}
+
+#media-status {
+  margin-top: 6px;
+  font-size: 12px;
+  min-height: 14px;
+  opacity: 0.8;
+}
