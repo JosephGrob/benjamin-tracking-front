@@ -9,7 +9,7 @@ La carte affiche :
 - des **photos et vidéos** associées à certains points du parcours.
 
 ## Carte publique
-
+ 
 La carte est accessible ici :
 
 https://josephgrob.github.io/benjamin-tracking-front/
