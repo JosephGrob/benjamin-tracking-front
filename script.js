@@ -140,23 +140,31 @@ function addMediaMarker(media) {
     content += `<em>${media.description}</em><br>`;
   }
 
-  // Construire une URL absolue si nécessaire
-  let url = media.url;
-  if (url && !url.startsWith("http")) {
-    url = `${API_BASE}${url}`;
-  }
+  // Construire une URL utilisable depuis GitHub Pages
+  let url = media.url || "";
 
-  if (media.type && media.type.startsWith("video/")) {
-    if (url) {
-      content += `<video src="${url}" controls style="max-width: 220px; max-height: 160px; margin-top: 6px;"></video>`;
+  if (url) {
+    if (!url.startsWith("http")) {
+      // Si c'est déjà un chemin /uploads/...
+      if (url.startsWith("/")) {
+        url = `${API_BASE}${url}`;
+      } else {
+        // Si c'est juste un nom de fichier, on préfixe aussi /uploads/
+        url = `${API_BASE}/uploads/${url}`;
+      }
     }
-  } else if (url) {
-    content += `<img src="${url}" alt="" style="max-width: 220px; max-height: 160px; margin-top: 6px;" />`;
+
+    if (media.type && media.type.startsWith("video/")) {
+      content += `<video src="${url}" controls style="max-width: 220px; max-height: 160px; margin-top: 6px;"></video>`;
+    } else {
+      content += `<img src="${url}" alt="" style="max-width: 220px; max-height: 160px; margin-top: 6px;" />`;
+    }
   }
 
   marker.bindPopup(content);
   marker.addTo(mediaLayer);
 }
+
 
 
 /**
