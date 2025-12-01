@@ -140,15 +140,24 @@ function addMediaMarker(media) {
     content += `<em>${media.description}</em><br>`;
   }
 
+  // Construire une URL absolue si nécessaire
+  let url = media.url;
+  if (url && !url.startsWith("http")) {
+    url = `${API_BASE}${url}`;
+  }
+
   if (media.type && media.type.startsWith("video/")) {
-    content += `<video src="${media.url}" controls style="max-width: 220px; max-height: 160px; margin-top: 6px;"></video>`;
-  } else if (media.url) {
-    content += `<img src="${media.url}" alt="" style="max-width: 220px; max-height: 160px; margin-top: 6px;" />`;
+    if (url) {
+      content += `<video src="${url}" controls style="max-width: 220px; max-height: 160px; margin-top: 6px;"></video>`;
+    }
+  } else if (url) {
+    content += `<img src="${url}" alt="" style="max-width: 220px; max-height: 160px; margin-top: 6px;" />`;
   }
 
   marker.bindPopup(content);
   marker.addTo(mediaLayer);
 }
+
 
 /**
  * Charge tous les médias existants depuis l'API
