@@ -29,6 +29,34 @@ const cartoLight = L.tileLayer(
 const API_BASE = "https://benjamin-tracking.onrender.com";
 
 
+
+// ===========================
+// Lightbox pour les médias
+// ===========================
+const lightbox = document.getElementById("media-lightbox");
+const lightboxImg = document.getElementById("media-lightbox-img");
+const lightboxCaption = document.getElementById("media-lightbox-caption");
+const lightboxClose = document.getElementById("media-lightbox-close");
+
+function openMediaLightbox(url, title) {
+  if (!url) return;
+  lightboxImg.src = url;
+  lightboxCaption.textContent = title || "";
+  lightbox.classList.add("visible");
+}
+
+function closeMediaLightbox() {
+  lightbox.classList.remove("visible");
+  lightboxImg.src = "";
+}
+
+// Fermer en cliquant sur le fond ou la croix
+lightbox.addEventListener("click", (e) => {
+  if (e.target === lightbox || e.target === lightboxClose) {
+    closeMediaLightbox();
+  }
+});
+
 // ===========================
 // 2. Formulaire "Ajouter un média"
 // ===========================
@@ -145,11 +173,9 @@ function addMediaMarker(media) {
 
   if (url) {
     if (!url.startsWith("http")) {
-      // Si c'est déjà un chemin /uploads/...
       if (url.startsWith("/")) {
         url = `${API_BASE}${url}`;
       } else {
-        // Si c'est juste un nom de fichier, on préfixe aussi /uploads/
         url = `${API_BASE}/uploads/${url}`;
       }
     }
@@ -157,9 +183,11 @@ function addMediaMarker(media) {
     if (media.type && media.type.startsWith("video/")) {
       content += `<video src="${url}" controls style="max-width: 220px; max-height: 160px; margin-top: 6px;"></video>`;
     } else {
-      content += `<img src="${url}" alt="" style="max-width: 220px; max-height: 160px; margin-top: 6px;" />`;
+      const safeTitle = (media.title || "Média").replace(/"/g, "&quot;");
+      content += `<img src="${url}" alt="" style="max-width: 220px; max-height: 160px; margin-top: 6px; cursor:pointer;" onclick="openMediaLightbox('${url}','${safeTitle}')" />`;
     }
   }
+
 
   marker.bindPopup(content);
   marker.addTo(mediaLayer);

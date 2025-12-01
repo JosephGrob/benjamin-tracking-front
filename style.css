@@ -114,3 +114,100 @@ body {
   min-height: 14px;
   opacity: 0.8;
 }
+
+/* --- Lightbox image plein écran --- */
+#media-lightbox {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.8);
+  display: none;
+  align-items: center;
+  justify-content: center;
+  z-index: 2000;
+}
+
+#media-lightbox.visible {
+  display: flex;
+}
+
+.media-lightbox-content {
+  position: relative;
+  max-width: 90vw;
+  max-height: 90vh;
+  text-align: center;
+}
+
+#media-lightbox-img {
+  max-width: 100%;
+  max-height: 80vh;
+  border-radius: 6px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.6);
+}
+
+#media-lightbox-caption {
+  margin-top: 8px;
+  color: #f5f5f5;
+  font-size: 14px;
+}
+
+#media-lightbox-close {
+  position: absolute;
+  top: -10px;
+  right: -10px;
+  font-size: 26px;
+  color: #fff;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+/* Taille stable des popups Leaflet */
+.leaflet-popup-content {
+  width: 150px !important; /* largeur interne du popup */
+  max-width: 150px !important;
+  overflow-wrap: break-word;
+  text-align: center;
+}
+
+/* Empêcher l'image de dépasser */
+.leaflet-popup-content img,
+.leaflet-popup-content video {
+  max-width: 100% !important;
+  height: auto;
+  display: block;
+  margin: 6px auto 0 auto;
+  border-radius: 4px;
+}
+
+/* ----- Popup Leaflet custom ----- */
+.leaflet-popup-content-wrapper {
+  background: rgba(40, 40, 40, 0.5); /* gris foncé 50% transparent */
+  color: #fff;
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  backdrop-filter: blur(4px); /* flou moderne (iOS-like) */
+  -webkit-backdrop-filter: blur(4px);
+  padding: 6px 10px;
+}
+
+/* Bord de la flèche */
+.leaflet-popup-tip {
+  background: rgba(40, 40, 40, 0.5);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+}
+
+/* Contenu interne du popup */
+.leaflet-popup-content {
+  width: 240px !important;
+  max-width: 150px !important;
+  text-align: center;
+}
+
+/* Images & vidéos dans le popup */
+.leaflet-popup-content img,
+.leaflet-popup-content video {
+  max-width: 100% !important;
+  height: auto;
+  display: block;
+  margin: 6px auto 0 auto;
+  border-radius: 6px;
+}
