@@ -288,6 +288,12 @@ function addGpx(path, name) {
 addGpx("data/trace1.gpx", "Trace 1");
 addGpx("data/trace2.gpx", "Trace 2");
 
+addGpx("data/activity_20969223596.gpx", "Activity 1");
+addGpx("data/activity_2104257057.gpx",  "Activity 2");
+addGpx("data/activity_21040882598.gpx", "Activity 3");
+addGpx("data/activity_21140677371.gpx", "Activity 4");
+addGpx("data/activity_21140677789.gpx", "Activity 5");
+
 
 // ===========================
 // 5. Contrôle des couches
