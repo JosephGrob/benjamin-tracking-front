@@ -12,7 +12,7 @@ La carte affiche :
  
 La carte est accessible ici :
 
-https://josephgrob.github.io/benjamin-tracking-front/
+https://josephgrob.github.io/benjamin-tracking-front/ 
 
 Elle fonctionne sur ordinateur, tablette et téléphone.  
 Il est possible de zoomer, déplacer la carte, cliquer sur les tracés et consulter les photos/vidéos associées.
