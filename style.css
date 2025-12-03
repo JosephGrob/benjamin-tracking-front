@@ -211,3 +211,28 @@ body {
   margin: 6px auto 0 auto;
   border-radius: 6px;
 }
+
+#reset-view {
+  position: absolute;
+  bottom: 30px;
+  left: 20px;
+  z-index: 1001;
+
+  padding: 8px 12px;
+  font-size: 13px;
+  border: none;
+  border-radius: 6px;
+
+  background: rgba(0, 0, 0, 0.6);
+  color: #fff;
+
+  cursor: pointer;
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+
+  border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+#reset-view:hover {
+  background: rgba(0, 0, 0, 0.8);
+}

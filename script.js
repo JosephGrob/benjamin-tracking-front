@@ -1,14 +1,25 @@
 // ===========================
 // 1. Carte & fonds
 // ===========================
-
+const DEFAULT_CENTER = [40, 0];
+const DEFAULT_ZOOM = 5;
 // Initialiser la carte centrée sur l'Atlantique
 const map = L.map("map", {
   minZoom: 3,
   maxZoom: 10
-}).setView([20, -30], 3);
+}).setView([40, 0], 3);
 
+// Limiter le déplacement sur la carte
+const BOUNDS = [
+  [-85, -300], // sud-ouest
+  [85, 300]    // nord-est
+];
 
+map.setMaxBounds(BOUNDS);
+
+map.on("drag", function () {
+  map.panInsideBounds(BOUNDS, { animate: false });
+});
 
 // --- 1) Fond GEBCO gris ---
 const gebcoGray = L.tileLayer(
@@ -383,3 +394,7 @@ updateLiveTrack();
 
 // Mise à jour toutes les 10 secondes (10000 ms)
 setInterval(updateLiveTrack, 10000);
+
+document.getElementById("reset-view").addEventListener("click", () => {
+  map.setView(DEFAULT_CENTER, DEFAULT_ZOOM, { animate: true });
+});
