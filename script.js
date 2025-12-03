@@ -288,9 +288,7 @@ function addGpx(path, name) {
   gpxLayer.name = name;
 }
 
-// Ajouter les deux fichiers GPX
-addGpx("data/trace1.gpx", "Trace 1");
-addGpx("data/trace2.gpx", "Trace 2");
+
 
 addGpx("data/activity_20969223596.gpx", "Activity 1");
 addGpx("data/activity_21024257057.gpx",  "Activity 2");
